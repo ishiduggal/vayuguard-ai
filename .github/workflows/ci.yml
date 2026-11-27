@@ -1,0 +1,23 @@
+name: Verify VayuGuard
+on: [push, pull_request]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck && npm run lint && npm test && npm run build
+      - run: npm audit --audit-level=high
+      - run: docker build -t vayuguard-audit .
+      - run: |
+          docker run -d --name vayuguard-check -p 8080:8080 vayuguard-audit
+          for attempt in 1 2 3 4 5; do
+            if curl --fail http://localhost:8080/api/health; then exit 0; fi
+            sleep 2
+          done
+          docker logs vayuguard-check
+          exit 1

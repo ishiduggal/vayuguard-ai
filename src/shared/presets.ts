@@ -1,0 +1,381 @@
+import type { CityLocation, EnvironmentBundle, HouseholdProfile, HourlyEnvironmentPoint } from './types.js';
+
+export const PRESET_INDIAN_CITIES: CityLocation[] = [
+  {
+    id: 'patiala',
+    name: 'Patiala',
+    state: 'Punjab',
+    country: 'India',
+    latitude: 30.3398,
+    longitude: 76.3869,
+    timezone: 'Asia/Kolkata',
+    detectionMethod: 'preset',
+    confirmed: true,
+  },
+  {
+    id: 'ludhiana',
+    name: 'Ludhiana',
+    state: 'Punjab',
+    country: 'India',
+    latitude: 30.901,
+    longitude: 75.8573,
+    timezone: 'Asia/Kolkata',
+    detectionMethod: 'preset',
+    confirmed: true,
+  },
+  {
+    id: 'chandigarh',
+    name: 'Chandigarh',
+    state: 'Chandigarh',
+    country: 'India',
+    latitude: 30.7333,
+    longitude: 76.7794,
+    timezone: 'Asia/Kolkata',
+    detectionMethod: 'preset',
+    confirmed: true,
+  },
+  {
+    id: 'amritsar',
+    name: 'Amritsar',
+    state: 'Punjab',
+    country: 'India',
+    latitude: 31.634,
+    longitude: 74.8723,
+    timezone: 'Asia/Kolkata',
+    detectionMethod: 'preset',
+    confirmed: true,
+  },
+  {
+    id: 'delhi',
+    name: 'New Delhi',
+    state: 'Delhi',
+    country: 'India',
+    latitude: 28.6139,
+    longitude: 77.209,
+    timezone: 'Asia/Kolkata',
+    detectionMethod: 'preset',
+    confirmed: true,
+  },
+];
+
+export function createPatialaDemoHousehold(): HouseholdProfile {
+  const patiala = PRESET_INDIAN_CITIES[0];
+  return {
+    id: 'demo-patiala-family',
+    householdName: 'Sharma Family (Demo — Patiala)',
+    isDemo: true,
+    location: patiala,
+    resources: {
+      hasAirPurifier: false,
+      hasAirConditioning: true,
+      hasExhaustFan: true,
+      hasIndoorSensor: false,
+      measuredIndoorPm25: null,
+      hasPublicTransitAccess: true,
+      limitedBudget: true,
+      cookingType: 'lpg_gas',
+      sweepingMethod: 'wet_mop',
+      usesIncenseOrDhoop: true,
+      indoorSmoking: false,
+    },
+    completedIndoorChecklistIds: [],
+    updatedAt: new Date().toISOString(),
+    members: [
+      {
+        id: 'member-father',
+        name: 'Rajesh',
+        role: 'Father (Bank Officer)',
+        ageGroup: 'adult',
+        wakeHour: 6,
+        sleepHour: 22,
+        preferredLanguage: 'en',
+        sensitivities: {
+          diagnosedAsthma: 'yes',
+          dustOrSeasonalAllergy: 'yes',
+          smokeOrCropBurningSensitivity: 'yes',
+          otherRespiratoryCondition: 'no',
+          coldAirSensitivity: 'yes',
+          frequentIrritationDuringSmog: 'yes',
+          clinicianPrecautionsNote: 'Keep clinician-prescribed reliever inhaler accessible during winter mornings.',
+          urgentSymptomsReported: false,
+        },
+        activities: [
+          {
+            id: 'act-father-walk',
+            title: 'Morning brisk walk',
+            category: 'morning_walk',
+            flexibility: 'flexible',
+            preferredStartHour: 6,
+            durationMinutes: 40,
+            intensity: 'moderate',
+            isOutdoor: true,
+            notes: 'Can switch to indoor corridor/yoga or shift to afternoon if cleaner.',
+          },
+          {
+            id: 'act-father-commute',
+            title: 'Office commute (Model Town -> Mall Road)',
+            category: 'office_commute',
+            flexibility: 'fixed',
+            preferredStartHour: 9,
+            durationMinutes: 35,
+            intensity: 'low',
+            isOutdoor: false,
+            transportMode: 'car',
+            tripDistanceKm: 8,
+            notes: 'Passes near school corridor.',
+          },
+        ],
+      },
+      {
+        id: 'member-mother',
+        name: 'Sunita',
+        role: 'Mother (Homemaker & Tutor)',
+        ageGroup: 'adult',
+        wakeHour: 6,
+        sleepHour: 22,
+        preferredLanguage: 'hi',
+        sensitivities: {
+          diagnosedAsthma: 'no',
+          dustOrSeasonalAllergy: 'yes',
+          smokeOrCropBurningSensitivity: 'yes',
+          otherRespiratoryCondition: 'no',
+          coldAirSensitivity: 'no',
+          frequentIrritationDuringSmog: 'yes',
+          clinicianPrecautionsNote: '',
+          urgentSymptomsReported: false,
+        },
+        activities: [
+          {
+            id: 'act-mother-cooking',
+            title: 'Breakfast & dinner cooking',
+            category: 'cooking',
+            flexibility: 'fixed',
+            preferredStartHour: 7,
+            durationMinutes: 60,
+            intensity: 'low',
+            isOutdoor: false,
+          },
+          {
+            id: 'act-mother-grocery',
+            title: 'Vegetable & grocery market run',
+            category: 'grocery',
+            flexibility: 'flexible',
+            preferredStartHour: 10,
+            durationMinutes: 45,
+            intensity: 'low',
+            isOutdoor: true,
+            transportMode: 'car',
+            tripDistanceKm: 6,
+          },
+          {
+            id: 'act-mother-ventilation',
+            title: 'Home window airing',
+            category: 'ventilation',
+            flexibility: 'flexible',
+            preferredStartHour: 8,
+            durationMinutes: 30,
+            intensity: 'low',
+            isOutdoor: false,
+          },
+        ],
+      },
+      {
+        id: 'member-student',
+        name: 'Kabir',
+        role: 'University Student (Punjabi Univ.)',
+        ageGroup: 'teen_student',
+        wakeHour: 7,
+        sleepHour: 23,
+        preferredLanguage: 'pa_roman',
+        sensitivities: {
+          diagnosedAsthma: 'no',
+          dustOrSeasonalAllergy: 'no',
+          smokeOrCropBurningSensitivity: 'not_sure',
+          otherRespiratoryCondition: 'no',
+          coldAirSensitivity: 'no',
+          frequentIrritationDuringSmog: 'no',
+          clinicianPrecautionsNote: '',
+          urgentSymptomsReported: false,
+        },
+        activities: [
+          {
+            id: 'act-student-uni',
+            title: 'University classes commute',
+            category: 'school',
+            flexibility: 'fixed',
+            preferredStartHour: 9,
+            durationMinutes: 45,
+            intensity: 'low',
+            isOutdoor: false,
+            transportMode: 'two_wheeler',
+            tripDistanceKm: 11,
+          },
+          {
+            id: 'act-student-run',
+            title: 'Evening fitness workout',
+            category: 'exercise',
+            flexibility: 'flexible',
+            preferredStartHour: 17,
+            durationMinutes: 45,
+            intensity: 'vigorous',
+            isOutdoor: true,
+          },
+        ],
+      },
+      {
+        id: 'member-child',
+        name: 'Ananya',
+        role: 'School Student (Class 5)',
+        ageGroup: 'child',
+        wakeHour: 6,
+        sleepHour: 21,
+        preferredLanguage: 'en',
+        sensitivities: {
+          diagnosedAsthma: 'no',
+          dustOrSeasonalAllergy: 'not_sure',
+          smokeOrCropBurningSensitivity: 'yes',
+          otherRespiratoryCondition: 'no',
+          coldAirSensitivity: 'no',
+          frequentIrritationDuringSmog: 'yes',
+          clinicianPrecautionsNote: '',
+          urgentSymptomsReported: false,
+        },
+        activities: [
+          {
+            id: 'act-child-school',
+            title: 'School attendance & commute',
+            category: 'school',
+            flexibility: 'fixed',
+            preferredStartHour: 8,
+            durationMinutes: 360,
+            intensity: 'low',
+            isOutdoor: false,
+            transportMode: 'car',
+            tripDistanceKm: 7,
+            notes: 'School starts 8:00 AM sharp, finishes 2:00 PM.',
+          },
+          {
+            id: 'act-child-play',
+            title: 'Afternoon outdoor play',
+            category: 'outdoor_play',
+            flexibility: 'flexible',
+            preferredStartHour: 16,
+            durationMinutes: 45,
+            intensity: 'vigorous',
+            isOutdoor: true,
+          },
+        ],
+      },
+      {
+        id: 'member-elder',
+        name: 'Harbans Singh',
+        role: 'Grandfather (Older Adult)',
+        ageGroup: 'older_adult',
+        wakeHour: 6,
+        sleepHour: 21,
+        preferredLanguage: 'pa',
+        sensitivities: {
+          diagnosedAsthma: 'no',
+          dustOrSeasonalAllergy: 'yes',
+          smokeOrCropBurningSensitivity: 'yes',
+          otherRespiratoryCondition: 'yes',
+          coldAirSensitivity: 'yes',
+          frequentIrritationDuringSmog: 'yes',
+          clinicianPrecautionsNote: 'Avoid cold dawn air and smoke; prefer warm indoor movement when hazy.',
+          urgentSymptomsReported: false,
+        },
+        activities: [
+          {
+            id: 'act-elder-walk',
+            title: 'Gentle daily walk',
+            category: 'morning_walk',
+            flexibility: 'flexible',
+            preferredStartHour: 7,
+            durationMinutes: 30,
+            intensity: 'low',
+            isOutdoor: true,
+          },
+          {
+            id: 'act-elder-errand',
+            title: 'Evening park & community visit',
+            category: 'outdoor_play',
+            flexibility: 'flexible',
+            preferredStartHour: 18,
+            durationMinutes: 40,
+            intensity: 'low',
+            isOutdoor: true,
+          },
+        ],
+      },
+    ],
+  };
+}
+
+/**
+ * Generates an explicit illustrative offline/demo winter smog curve for Patiala when live Open-Meteo is unreachable.
+ * Always tagged as `fallback_offline` so it is never confused with live station or live forecast data.
+ */
+export function buildOfflineFallbackEnvironment(location: CityLocation): EnvironmentBundle {
+  const now = new Date();
+  const baseDate = new Intl.DateTimeFormat('en-CA', { timeZone: location.timezone, year: 'numeric', month: '2-digit', day: '2-digit' }).format(now);
+  const hourly: HourlyEnvironmentPoint[] = [];
+
+  // Typical Punjab late-November diurnal pattern: shallow morning/night inversion, afternoon mixing dip
+  const pm25Curve = [
+    175, 182, 188, 192, 198, 205, 212, 195, // 0-7
+    168, 138, 112, 92, 78, 72, 68, 74,     // 8-15
+    88, 118, 148, 172, 185, 190, 186, 180, // 16-23
+  ];
+  const blhCurve = [
+    25, 20, 20, 18, 18, 20, 35, 95,
+    210, 380, 560, 740, 890, 960, 940, 820,
+    540, 220, 85, 45, 30, 25, 25, 22,
+  ];
+  const tempCurve = [
+    13, 12.5, 12, 11.5, 11, 11, 11.5, 13,
+    15.5, 18, 20.5, 22.5, 24, 24.8, 25, 24.2,
+    22.5, 20, 18, 16.5, 15.5, 14.8, 14.2, 13.5,
+  ];
+
+  for (let h = 0; h < 24; h++) {
+    const pm25 = pm25Curve[h];
+    const pm10 = Math.round(pm25 * 1.18);
+    hourly.push({
+      time: `${baseDate}T${String(h).padStart(2, '0')}:00`,
+      hour: h,
+      pm25,
+      pm10,
+      no2: Math.round(35 + (pm25 / 200) * 40),
+      so2: Math.round(18 + (pm25 / 200) * 18),
+      co: Math.round(900 + pm25 * 5),
+      o3: h >= 12 && h <= 16 ? 58 : 28,
+      dust: 12,
+      usAqi: null,
+      europeanAqi: null,
+      temperatureC: tempCurve[h],
+      humidityPct: h < 8 || h > 19 ? 78 : 48,
+      windSpeedKmh: h >= 11 && h <= 16 ? 9.5 : 3.2,
+      windDirectionDeg: 310,
+      precipitationMm: 0,
+      precipitationProbPct: 5,
+      visibilityM: h < 8 ? 2200 : 6500,
+      boundaryLayerHeightM: blhCurve[h],
+      weatherCode: h < 8 ? 45 : 0,
+    });
+  }
+
+  const currentHour = Math.min(23, Math.max(0, Number(new Intl.DateTimeFormat('en-GB', { timeZone: location.timezone, hour: '2-digit', hourCycle: 'h23' }).format(now))));
+  return {
+    location,
+    source: 'Illustrative Offline North-India Winter Smog Pattern (Live API unreachable)',
+    dataKind: 'fallback_offline',
+    aqiStandard: 'Synthetic PM2.5 scenario; AQI unavailable',
+    fetchedAt: now.toISOString(),
+    forecastHorizonHours: 24,
+    isStale: true,
+    staleReason: 'Live Open-Meteo data could not be fetched; showing labeled offline fallback curve.',
+    missingFields: [],
+    current: hourly[currentHour],
+    hourly,
+  };
+}

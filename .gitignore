@@ -1,0 +1,16 @@
+node_modules/
+dist/
+coverage/
+.env
+.env.local
+.env.*.local
+*.log
+.DS_Store
+playwright-report/
+test-results/
+
+.env.*
+!.env.example
+
+# Local audit/provenance records are not submission source
+audit/

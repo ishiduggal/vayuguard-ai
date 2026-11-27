@@ -1,0 +1,4 @@
+# AI assistance disclosure
+VayuGuard's supplied implementation was AI assisted. The participant's prior conversation describes Antigravity generation followed by a Codex audit; the auditor did not independently verify every original creation step. Preserve authentic tool history when submitting.
+
+Codex inspected source, repaired calculations/safety/data handling and reviewer flows, added regression tests, updated dependencies and prepared these submission drafts. Deterministic TypeScript performs scheduling and scenarios. Gemini is an optional explanation service; without credentials, labeled fallback responses are used. SDK tests use mocks, not live Gemini calls. Do not claim autonomous medical judgment, measured health improvement, verified emissions savings or a completed cloud deployment.
