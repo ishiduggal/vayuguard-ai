@@ -9,7 +9,8 @@
 - [x] Prepare Dockerfile, secret exclusions, CI draft, pitch/social/blog drafts.
 
 ## Required before submission
-- [ ] Confirm official portal deadline, eligibility, allowed AI tools and exact required artifacts.
+- [x] Confirm deadline, Cloud Run, LinkedIn and three-attempt rules from organizer email.
+- [ ] Inspect exact portal fields and eligibility.
 - [ ] Preserve genuine Antigravity prompts/history and accurate AI disclosure.
 - [ ] Supply authorized Gemini credentials; verify a real response reports Gemini use and test failure fallback without exposing keys.
 - [ ] Build/run Linux amd64 image; confirm PORT, health, static assets and API behavior.

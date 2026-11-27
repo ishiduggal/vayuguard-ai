@@ -19,4 +19,6 @@ The guided tour follows these views. Onboarding data persist in this browser's l
 ## Verification and delivery
 Run `npm run typecheck`, `npm run lint`, `npm test`, `npm run build`, and `npm audit`. See [TEST_REPORT.md](TEST_REPORT.md), [AUDIT_REPORT.md](AUDIT_REPORT.md), and [SUBMISSION_CHECKLIST.md](SUBMISSION_CHECKLIST.md).
 
-A Dockerfile and draft CI workflow are included. Docker execution, live Gemini and Google Cloud Run deployment are **not verified**. No public deployment or submission was made during this audit. This is planning support, not medical diagnosis, a certified exposure model or a validated safety guarantee.
+Repository: https://github.com/ishiduggal/vayuguard-ai (currently private pending publication approval).
+
+A Dockerfile, GitHub Actions workflow and guarded Cloud Run deployment script are included; see [DEPLOYMENT.md](DEPLOYMENT.md). Docker execution, live Gemini and Google Cloud Run deployment are **not verified**. No public deployment or submission was made during this audit. This is planning support, not medical diagnosis, a certified exposure model or a validated safety guarantee.
