@@ -1,4 +1,6 @@
 # VayuGuard AI — Every Breath, Every Family
+
+**Live Cloud Run demo:** https://vayuguard-ai-673517484550.asia-south1.run.app
 A family air-quality planning prototype for PromptWars Challenge 06. It turns modeled pollution and weather into individually constrained daily routines, explains tradeoffs, and recalculates plans when conditions change.
 
 ## Run locally

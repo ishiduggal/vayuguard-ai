@@ -10,3 +10,7 @@ Organizer email confirms Cloud Run is required. No cloud service has been create
 7. Test the public URL in a signed-out browser and on a phone. Record service revision, test date and verified URL in README. Set appropriate quotas/monitoring and remove the deployment when no longer needed.
 
 Official references: https://cloud.google.com/run/docs/deploying-source-code and https://cloud.google.com/run/docs/configuring/services/secrets . The app binds `0.0.0.0` and honors `PORT`. Automated container checks run through the included GitHub Actions workflow after push; inspect their real result before claiming success.
+
+## Verified Cloud Run deployment — 28 November 2026
+Live URL: https://vayuguard-ai-673517484550.asia-south1.run.app
+Revision: `vayuguard-ai-00001-lp7`, region `asia-south1`. Build succeeded; service serves 100% traffic. Unauthenticated health request returned HTTP 200; browser demo loaded actual modeled environmental data. Dedicated build/runtime identities, 0 minimum and 1 maximum instance. Gemini is not configured; assistant uses labeled fallback. This supersedes earlier pending-deployment statements.

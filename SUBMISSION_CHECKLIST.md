@@ -30,3 +30,7 @@
 
 ## Organizer email clarification — 27 November 2026
 Organizer emails confirm: Challenge 06 closes 29 November 2026 at 11:59 p.m. IST. Submission requires code, a live app running on Google Cloud Run, and a LinkedIn build-in-public post. Three attempts are allowed; the LAST submission determines final ranking. Latest Challenge 06 email permits any AI tools/stack, clarifying older Antigravity wording. Final Top 400 receive manual review after automated evaluation. Portal fields still need inspection. This clarification supersedes earlier uncertainty about Cloud Run, deadline and tool choice.
+
+## Verified Cloud Run deployment — 28 November 2026
+Live URL: https://vayuguard-ai-673517484550.asia-south1.run.app
+Revision: `vayuguard-ai-00001-lp7`, region `asia-south1`. Build succeeded; service serves 100% traffic. Unauthenticated health request returned HTTP 200; browser demo loaded actual modeled environmental data. Dedicated build/runtime identities, 0 minimum and 1 maximum instance. Gemini is not configured; assistant uses labeled fallback. This supersedes earlier pending-deployment statements.

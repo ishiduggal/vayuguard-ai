@@ -9,3 +9,7 @@ Actual HTTP evidence captured modeled Open-Meteo data and historical summaries i
 
 ## External CI confirmation — 28 November 2026
 GitHub Actions run https://github.com/ishiduggal/vayuguard-ai/actions/runs/46038296726 completed successfully: npm install, typecheck, lint, tests, production build, dependency audit, Linux Docker image build and running-container health check. This supersedes the earlier unverified-container limitation. Cloud Run and live Gemini remain unverified.
+
+## Verified Cloud Run deployment — 28 November 2026
+Live URL: https://vayuguard-ai-673517484550.asia-south1.run.app
+Revision: `vayuguard-ai-00001-lp7`, region `asia-south1`. Build succeeded; service serves 100% traffic. Unauthenticated health request returned HTTP 200; browser demo loaded actual modeled environmental data. Dedicated build/runtime identities, 0 minimum and 1 maximum instance. Gemini is not configured; assistant uses labeled fallback. This supersedes earlier pending-deployment statements.
