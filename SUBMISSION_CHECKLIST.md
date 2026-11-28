@@ -13,7 +13,8 @@
 - [ ] Inspect exact portal fields and eligibility.
 - [ ] Preserve genuine Antigravity prompts/history and accurate AI disclosure.
 - [ ] Supply authorized Gemini credentials; verify a real response reports Gemini use and test failure fallback without exposing keys.
-- [ ] Build/run Linux amd64 image; confirm PORT, health, static assets and API behavior.
+- [x] Build/run Linux image in GitHub Actions and verify health endpoint.
+- [ ] Verify deployed static assets and full API behavior on Cloud Run.
 - [ ] Approve project/billing/region and public Cloud Run publishing; configure secret, quotas, max instances and budget alerts (not a guaranteed spending cap).
 - [ ] Deploy and record real service URL/revision; verify health and full reviewer journey from an unauthenticated browser.
 - [ ] Check no credentials/private profiles enter public source; approve repository publication.

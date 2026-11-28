@@ -6,3 +6,6 @@ Coverage includes individual sensitivity with identical routines, fixed/flexible
 Actual browser automation exercised the demo, five-member comparison, persistent guided tour, routine view, spike repair (seven differences across five demo members), Home checklist, assistant fallback, urgent profile and onboarding/edit persistence. Desktop viewport was 1280×720. Narrow-layout checks used a 390×844 iframe (375 px content width after scrollbar), with no horizontal page overflow in the inspected comparison view. This is not physical-device testing. Some findings from these interactions were subsequently covered by regression tests and corrected.
 
 Actual HTTP evidence captured modeled Open-Meteo data and historical summaries in `audit/baseline-live-environment.json` and `audit/baseline-seasonal.json`. These snapshots are time-specific, not fixed expected values. No live Gemini, Docker execution, remote Cloud Run, authenticated portal or external CI success is claimed.
+
+## External CI confirmation — 28 November 2026
+GitHub Actions run https://github.com/ishiduggal/vayuguard-ai/actions/runs/46038296726 completed successfully: npm install, typecheck, lint, tests, production build, dependency audit, Linux Docker image build and running-container health check. This supersedes the earlier unverified-container limitation. Cloud Run and live Gemini remain unverified.

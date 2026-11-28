@@ -27,3 +27,6 @@
 A compelling local demonstration is available, but a legitimate GenAI competition submission still needs a real authorized Gemini call and a publicly accessible preview. The user's Cloud Run goal additionally requires a successful container/deployment test. No Docker/gcloud tooling or authorized credentials were available. Publishing, billing and submitting require participant approval. Confirm private portal rules and authentic Antigravity provenance before claiming compliance.
 
 The strongest defensible differentiator is explainable, individually constrained family planning with visible repair after changing conditions—not a globally optimized household route planner or medical prediction system. See SUBMISSION_PACKAGE.md for accurate narration.
+
+## Verification update — 28 November 2026
+The public repository is https://github.com/ishiduggal/vayuguard-ai . GitHub Actions run 46038296726 passed all checks including Linux Docker build and running-container health. This supersedes earlier statements that Docker/CI were unverified. Cloud Run deployment and live Gemini remain pending; Google Cloud login is required.

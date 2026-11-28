@@ -22,3 +22,6 @@ Run `npm run typecheck`, `npm run lint`, `npm test`, `npm run build`, and `npm a
 Repository: https://github.com/ishiduggal/vayuguard-ai.
 
 A Dockerfile, GitHub Actions workflow and guarded Cloud Run deployment script are included; see [DEPLOYMENT.md](DEPLOYMENT.md). Docker execution, live Gemini and Google Cloud Run deployment are **not verified**. No public deployment or submission was made during this audit. This is planning support, not medical diagnosis, a certified exposure model or a validated safety guarantee.
+
+## Verification update — 28 November 2026
+The public repository is https://github.com/ishiduggal/vayuguard-ai . GitHub Actions run 46038296726 passed all checks including Linux Docker build and running-container health. This supersedes earlier statements that Docker/CI were unverified. Cloud Run deployment and live Gemini remain pending; Google Cloud login is required.
